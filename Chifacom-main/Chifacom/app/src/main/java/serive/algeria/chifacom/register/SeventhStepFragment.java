@@ -37,7 +37,8 @@ public class SeventhStepFragment extends Fragment implements IonBackPressed, Vie
 
     private Bundle bundle;
     private TextView doctorfull,back;
-    AppCompatButton createUser;
+    private AppCompatButton createUser;
+    private AppCompatButton inserer_photo;
 
     private ProgressDialog progressDialog;
 
@@ -75,6 +76,9 @@ public class SeventhStepFragment extends Fragment implements IonBackPressed, Vie
         createUser = view.findViewById(R.id.submitRegistration);
         createUser.setOnClickListener(this);
 
+        inserer_photo = view.findViewById(R.id.inserer_photo);
+        inserer_photo.setOnClickListener(this);
+
 
 
         return view;
@@ -100,10 +104,13 @@ public class SeventhStepFragment extends Fragment implements IonBackPressed, Vie
     @Override
     public void onClick(View v) {
 
-
+        if (v== inserer_photo){
+            insertPhoto();
+        }
         if (v== createUser){
             createNewDoctor();
         }
+
         if (v == back){
             Fragment fragment = new SixthStepFragment();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -113,6 +120,10 @@ public class SeventhStepFragment extends Fragment implements IonBackPressed, Vie
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
+    }
+
+    private void insertPhoto() {
+
     }
 
     public void createNewDoctor(){

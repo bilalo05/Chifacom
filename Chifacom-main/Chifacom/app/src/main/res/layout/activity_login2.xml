@@ -111,6 +111,7 @@
             android:textSize="@dimen/_12ssp"
             android:paddingHorizontal="@dimen/_8sdp"
             android:textAlignment="center"
+            android:text="bilal.yahia1994@gmail.com"
             />
 
         <View
@@ -135,7 +136,8 @@
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toTopOf="@+id/registerNav"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="123"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -152,8 +154,7 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/_12ssp"
-            android:textStyle="bold"
-           />
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/forgetPass"

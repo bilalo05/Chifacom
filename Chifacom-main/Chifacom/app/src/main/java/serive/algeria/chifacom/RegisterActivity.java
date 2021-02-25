@@ -33,10 +33,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         FrameLayout fragmentContainer =  findViewById(R.id.fragment_container);
 
-       FirstStepFragment fragment = FirstStepFragment.newInstance();
+        FirstStepFragment fragment = FirstStepFragment.newInstance();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-//        transaction.setCustomAnimations(R.anim.slide_out_right, R.anim.slide_in_right, R.anim.slide_out_right, R.anim.slide_in_right);
+//      transaction.setCustomAnimations(R.anim.slide_out_right, R.anim.slide_in_right, R.anim.slide_out_right, R.anim.slide_in_right);
         transaction.addToBackStack(null);
         transaction.add(R.id.fragment_container, fragment, "BLANK_FRAGMENT").commit();
 

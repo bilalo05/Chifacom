@@ -26,19 +26,13 @@
         </menu>
     </item>
 
-<group android:checkableBehavior="single">
-
-    <item
-        android:id="@+id/about"
-        android:title="@string/propos_de"/>
-    <item
-        android:id="@+id/logout"
-        android:title="@string/se_deconnecter"/>
-
-
-</group>
-
-
-
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/about"
+            android:title="@string/propos_de"/>
+        <item
+            android:id="@+id/logout"
+            android:title="@string/se_deconnecter"/>
+    </group>
 
 </menu>

@@ -8,11 +8,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	if(isset($_POST['office_mail']) and isset($_POST['office_pass'])){
 		       
 	  	$db = new DbOperations();
+		$user_response = array();
 		
-		if($db->userLogin($_POST['office_email'],$_POST['0ffice_pass'])){
+		if($db->userLogin($_POST['office_mail'],$_POST['office_pass'])){
 			//phpinfo();
-			if($db->isActive($_POST['office_email'],$_POST['0ffice_pass'])){
-			$user = $db->getUserByUsername($_POST['office_email']);
+			if($db->isActive($_POST['office_mail'],$_POST['office_pass'])){
+			$user = $db->getUserByUsername($_POST['office_mail']);
 			$doctor = $db -> getDoctorByUsername($user['office_id']);
 			$response['error'] = false ; 
 			$response['office_id'] = $user['office_id'];
@@ -25,6 +26,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		    $response['doctor_address'] = $doctor['doctor_address'];
 			$response['doctor_speciality'] = $doctor['doctor_speciality'];
 			$response['birthdate'] = $doctor['birthdate'];
+			
+			array_push($user_response,$response);
 			
 			}else{
 				$response['error'] = true ;	
@@ -47,4 +50,4 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	}
 }
 
-echo json_encode($response);
+echo json_encode($user_response);

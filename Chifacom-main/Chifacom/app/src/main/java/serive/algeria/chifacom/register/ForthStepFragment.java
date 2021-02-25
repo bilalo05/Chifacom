@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,6 +53,17 @@ public class ForthStepFragment extends Fragment implements View.OnClickListener,
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_forth_step, container, false);
         bundle=this.getArguments();
+        if (bundle != null) {
+            final String firstname = bundle.getString("fname", "");
+            final String firstnameAR = bundle.getString("fnameAR", "");
+            final String lastname = bundle.getString("lname", "");
+            final String lastnameAR = bundle.getString("lnameAR", "");
+            final String birthday = bundle.getString("birthday","");
+            final String birthplace = bundle.getString("birthplace","");
+            final String phone = bundle.getString("phone","");
+            Log.d("register", firstname + " - " + firstnameAR + " - " + lastname + " - " + lastnameAR
+                    + " - " +birthday+ " - " +birthplace+ " - " +phone);
+        }
 
         back = view.findViewById(R.id.changeNumber);
         back.setOnClickListener(this);

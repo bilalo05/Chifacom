@@ -9,11 +9,23 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
+import java.util.Locale;
+
+import serive.algeria.chifacom.controle.Language;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Language language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        language = new Language(this);
+        if(language.getLocale().equals("")){
+            language.setLocate(Locale.getDefault().getLanguage(),this);
+        }else{
+            language.loadLocale();
+        }
         setContentView(R.layout.activity_main);
 
         View decorView = getWindow().getDecorView();

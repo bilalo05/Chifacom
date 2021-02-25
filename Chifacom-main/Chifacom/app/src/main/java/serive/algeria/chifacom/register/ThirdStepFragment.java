@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +66,13 @@ Bundle bundle;
 
         View view =  inflater.inflate(R.layout.fragment_third_step, container, false);
         bundle = this.getArguments();
-
+        if (bundle != null) {
+            final String firstname = bundle.getString("fname", "");
+            final String firstnameAR = bundle.getString("fnameAR", "");
+            final String lastname = bundle.getString("lname", "");
+            final String lastnameAR = bundle.getString("lnameAR", "");
+            Log.d("register", firstname + " - " + firstnameAR + " - " + lastname + " - " + lastnameAR);
+        }
 
         //get views
 
@@ -131,6 +138,7 @@ Bundle bundle;
         if (v==nextStep){
             Fragment fragment = new ForthStepFragment();
             if (bundle != null){
+
             bundle.putString("phone",phone.getText().toString().trim());
             bundle.putString("birthday",birthday.trim());
             bundle.putString("birthplace",birthplace.getText().toString().trim());

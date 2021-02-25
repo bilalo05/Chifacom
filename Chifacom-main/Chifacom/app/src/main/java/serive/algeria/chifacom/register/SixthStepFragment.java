@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,20 @@ public class SixthStepFragment extends Fragment implements View.OnClickListener,
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_sixth_step, container, false);
         bundle = this.getArguments();
+        if (bundle != null) {
+            final String firstname = bundle.getString("fname", "");
+            final String firstnameAR = bundle.getString("fnameAR", "");
+            final String lastname = bundle.getString("lname", "");
+            final String lastnameAR = bundle.getString("lnameAR", "");
+            final String birthday = bundle.getString("birthday","");
+            final String birthplace = bundle.getString("birthplace","");
+            final String phone = bundle.getString("phone","");
+            final String username = bundle.getString("username","");
+            final String password =bundle.getString("password","");
+            Log.d("register", firstname + " - " + firstnameAR + " - " + lastname + " - " + lastnameAR
+                    + " - " +birthday+ " - " +birthplace+ " - " +phone
+                    + " - " +username+ " - " +password);
+        }
 
         speciality = view.findViewById(R.id.speciality);
         email = view.findViewById(R.id.email);

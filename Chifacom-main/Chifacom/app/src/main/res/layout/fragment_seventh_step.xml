@@ -43,6 +43,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/inserer_photo"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_20sdp"
         android:background="@drawable/bg_signin_btn"

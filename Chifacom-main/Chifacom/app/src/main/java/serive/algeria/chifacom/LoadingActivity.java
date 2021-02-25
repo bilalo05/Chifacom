@@ -8,11 +8,17 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
+import serive.algeria.chifacom.controle.Language;
+
 public class LoadingActivity extends AppCompatActivity {
-View decorView;
+    private Language language;
+
+    View decorView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        language = new Language(this);
+        language.setLocate(language.getLocale(),this);
         setContentView(R.layout.activity_loading);
 
         decorView = getWindow().getDecorView();

@@ -9,12 +9,10 @@
     tools:context=".doctor.DoctorMainActivity"
     tools:openDrawer="start">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -54,6 +52,7 @@
             />
 
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,6 +68,7 @@
             android:paddingHorizontal="@dimen/_4sdp"
             />
     </RelativeLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -78,8 +78,7 @@
         app:menu="@menu/drawer_menu"
         app:itemTextColor="#80767676"
         app:itemTextAppearance="@style/NexaTextViewStyle"
-        android:fitsSystemWindows="true"
-        >
+        android:fitsSystemWindows="true">
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_gravity="center"
@@ -94,10 +93,6 @@
 
         </RelativeLayout>
 
-
     </com.google.android.material.navigation.NavigationView>
-
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
